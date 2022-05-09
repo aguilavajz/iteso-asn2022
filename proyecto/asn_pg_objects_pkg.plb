@@ -33,6 +33,35 @@ create or replace package body asn_pg_objects_pkg as
             end if;
         end loop;
     end upload_file;
+
+    function get_lambda return varchar2
+    is
+        l_request_url varchar2(32767);
+        l_response clob;
+        upload_failed_exception exception;
+    begin
+        l_request_url := 'https://powqxloccw6v7p6b7ja54yjely0uxpqr.lambda-url.us-east-2.on.aws/';
+
+        --apex_web_service.g_request_headers(1).name := 'Content-Type';
+        --apex_web_service.g_request_headers(1).value := file.mime_type;
+        l_response  := apex_web_service.make_rest_request(
+                        p_url => l_request_url
+                        ,p_http_method => 'GET'
+        );
+
+        if apex_web_service.g_status_code != 200 then
+            raise upload_failed_exception;
+        else
+            apex_debug.log_message(
+                  p_message => l_response
+                , p_enabled => true
+                , p_level => 1
+            );
+        end if;
+
+        return null;
+
+    end get_lambda;
 end;
 /
 

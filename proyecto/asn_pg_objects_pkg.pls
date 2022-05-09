@@ -5,6 +5,8 @@ create or replace package asn_pg_objects_pkg as
         p_file in varchar2
     );
 
+    function get_lambda return varchar2;
+
 end;
 /
 
