@@ -28,7 +28,7 @@ prompt APPLICATION 100 - ASN Proyecto
 -- Application Export:
 --   Application:     100
 --   Name:            ASN Proyecto
---   Date and Time:   07:55 Tuesday May 10, 2022
+--   Date and Time:   07:59 Tuesday May 10, 2022
 --   Exported By:     VINICIO.JIMENEZ
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -119,7 +119,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'ASN Proyecto'
 ,p_last_updated_by=>'VINICIO.JIMENEZ'
-,p_last_upd_yyyymmddhh24miss=>'20220510075517'
+,p_last_upd_yyyymmddhh24miss=>'20220510075925'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>3
 ,p_ui_type_name => null
@@ -13985,7 +13985,7 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'VINICIO.JIMENEZ'
-,p_last_upd_yyyymmddhh24miss=>'20220510074710'
+,p_last_upd_yyyymmddhh24miss=>'20220510075925'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(8227678139037413)
@@ -14181,7 +14181,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_db_column_name=>'FILENAME'
 ,p_display_order=>20
 ,p_column_identifier=>'B'
-,p_column_label=>'File'
+,p_column_label=>'Archivo'
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
@@ -14209,7 +14209,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_db_column_name=>'CREATED_DT'
 ,p_display_order=>50
 ,p_column_identifier=>'E'
-,p_column_label=>'Created Dt'
+,p_column_label=>'Fecha'
 ,p_column_type=>'DATE'
 ,p_column_alignment=>'CENTER'
 ,p_format_mask=>'DD-MON-YYYY HH24:MI:SS'
@@ -14222,8 +14222,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_identifier=>'F'
 ,p_column_label=>'Updated Dt'
 ,p_column_type=>'DATE'
-,p_column_alignment=>'CENTER'
-,p_format_mask=>'DD-MON-YYYY HH24:MI:SS'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
 ,p_tz_dependent=>'N'
 );
 wwv_flow_api.create_worksheet_rpt(
